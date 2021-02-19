@@ -158,7 +158,7 @@ def larva_feeding(day,hour,wgt):
     swim_vel=3.*length_m*3600   #BL/s ->m/h swimming velocity (m/s) scale with BL
     msa = 4.699*((length_m*1000.)**-1.129)  #From Hilder PE, Battaglene SC, Hart NS, Collin SP, Cobcroft JM (2019) Retinal adaptations of southern bluefin tuna larvae: Implications for culture. Aquaculture 507:222-232
     behav_anatomical_ratio = 0.5 #The ratio between anatomical and behavioural measures of visual detection
-    vis_r=0.5*Clad_length/np.tan(msa*0.5*np.pi/180) #See eg Job & Bellwood 1996 JFB 48:952-963. vis_r in m
+    vis_r=0.5*Clad_length/np.tan(msa*0.5*np.pi/180) #See eg Job & Bellwood 1996 JFB 48:952-963. vis_r in m. NB - from degrees to radians in np.tan()
     vis_r=behav_anatomical_ratio*vis_r         #m   How far away the larva detect prey
     Light = LightLim[hour,day]  #Day, night, dusk or dawn
     Clado_dens = CladoDay[day] * 0.1   # #/m3 Density of cladceran - reduced in open ocean by some factor
